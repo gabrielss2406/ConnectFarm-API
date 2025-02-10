@@ -18,5 +18,5 @@ def connect_mongo(collection_name: str) -> tuple[Collection, MongoClient]:
         # print("Conexão estabelecida com sucesso.")
         return collection, client
     except Exception as e:
-        print(f"Erro ao conectar ao banco de dados: {e}")
+        print(f"Erro ao conectar ao banco de dados mongo: {e}")
         raise
