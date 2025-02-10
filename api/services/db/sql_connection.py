@@ -12,5 +12,6 @@ def connect():
         print("Conexão estabelecida com sucesso.")
         return connection
     except Exception as e:
+        print(e)
         print(f"Erro ao conectar ao banco de dados sql: {e}")
         raise
