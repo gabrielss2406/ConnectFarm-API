@@ -7,7 +7,7 @@ load_dotenv()
 def connect():
     try:
         connection = psycopg2.connect(
-            "postgresql://postgres:connectfarm@db.gxnlfyzuqhznrojmkegp.supabase.co:5432/postgres"
+            "postgresql://postgres:connectfarm@db.gxnlfyzuqhznrojmkegp.supabase.co:5432/postgres?sslmode=require"
         )
         print("Conexão estabelecida com sucesso.")
         return connection
