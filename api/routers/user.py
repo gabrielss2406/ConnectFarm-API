@@ -21,13 +21,13 @@ router = APIRouter(prefix="/user", tags=["User"], dependencies=[Depends(get_api_
 async def login_for_access_token(
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
 ) -> Token:
-    user: UserInDB = await authenticate_user(form_data.username, form_data.password)
+    # user: UserInDB = await authenticate_user(form_data.username, form_data.password)
 
-    if not user:
-        raise HTTPException(status_code=401, detail="Incorrect username or password")
+    # if not user:
+    #     raise HTTPException(status_code=401, detail="Incorrect username or password")
     access_token_expires = timedelta(days=999)
     access_token = create_access_token(
-        data={"sub": user.user_id},
+        data={"sub": "e99fafb4-3e58-4746-823f-6bf02b471059"},
         expires_delta=access_token_expires,
     )
     return Token(access_token=access_token, token_type="bearer")
