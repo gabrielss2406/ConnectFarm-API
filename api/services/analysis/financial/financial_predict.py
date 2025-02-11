@@ -38,9 +38,8 @@ def predict(x: float, slope: float, intercept: float) -> float:
 async def analyze_financials_prediction(farm_id: UUID):
     collection, client = connect_mongo("financials")
     try:
-        now = datetime.utcnow()
-        current_month = now.month
-        current_year = now.year
+        current_month = "12"
+        current_year = "2024"
 
         # Datas no formato "yyyy-mm-dd"
         start_of_year = datetime(current_year, 1, 1).strftime("%Y-%m-%d")
