@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 async def analyze_financials_current(farm_id: UUID):
     collection, client = connect_mongo("financials")
     try:
-        current_month = "12"
-        current_year = "2024"
+        current_month = 9
+        current_year = 2024
 
         # Datas no formato "yyyy-mm-dd"
         start_of_month = datetime(current_year, current_month, 1).strftime("%Y-%m-%d")
